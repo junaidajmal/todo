@@ -1,0 +1,49 @@
+body{
+    color: black;
+    background: skyblue;
+    font-family: 'Noto Sans Mono', monospace;
+}
+
+.container{
+    position: absolute;
+    border: 1px solid black;
+    top: 20%;
+    left: 530;
+    text-align: center;
+    background: white;
+    padding: 10px;
+}
+
+.line{
+    height: 1px;
+    width: 150px;
+    background-color: black;
+    display: block;
+    margin: auto;
+    margin-top: -20px;
+
+}
+
+.content{
+    list-style-type: none;
+    margin-top: 40px;
+    padding: 0px;
+}
+
+.item{
+    display: flex;
+    justify-content: space-between;
+    padding: 3px;
+}
+
+.delete-btn{
+    background-color: transparent;
+    border: 1px solid;
+    transition: all 0.2s linear;
+}
+
+.delete-btn:hover{
+    background-color: skyblue;
+    border: none;
+    color: white;
+}
