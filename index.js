@@ -3,7 +3,7 @@ const itemName= document.querySelector("#item-name");
 const addButton= document.querySelector(".add-btn");
 
 var items =[];
-const localStorageItems = localStorage.getItem("cart-items");
+const localStorageItems = localStorage.getItem("items");
 if (localStorageItems != null){
     items=JSON.parse(localStorageItems);
 }
@@ -22,7 +22,7 @@ function addButtonFn (e) {
     const JSONitems = JSON.stringify("items");
 
     items.push(itemNameValue);
-    localStorage.setItem("cart-items", JSONitems )
+    localStorage.setItem("items", JSONitems )
 
     console.log(items)
 
