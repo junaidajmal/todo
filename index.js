@@ -2,10 +2,29 @@ const listContent= document.querySelector(".content");
 const itemName= document.querySelector("#item-name");
 const addButton= document.querySelector(".add-btn");
 
+var items =[];
+const localStorageItems = localStorage.getItem("cart-items");
+if (localStorageItems != null){
+    items=JSON.parse(localStorageItems);
+}
+
+function deleteBtnFn (e) {
+   
+    e.target.parentElement.remove();
+
+}
+
 function addButtonFn (e) {
 
     const itemNameValue= itemName.value;
     itemName.value="";
+
+    const JSONitems = JSON.stringify("items");
+
+    items.push(itemNameValue);
+    localStorage.setItem("cart-items", JSONitems )
+
+    console.log(items)
 
     const liItem= document.createElement("li");
     liItem.className="item";
@@ -23,7 +42,11 @@ function addButtonFn (e) {
     liItem.appendChild(deleteBtn);
    
     listContent.appendChild(liItem);
+
+    
+deleteBtn.addEventListener("click", deleteBtnFn);
 }
 
 addButton.addEventListener("click", addButtonFn);
+
 
